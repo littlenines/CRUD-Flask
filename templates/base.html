@@ -1,0 +1,82 @@
+<!-- Sve sto dodajemo u ovaj file primenjivace se na svim html fajlovima zbog nasledjivanja pomocu jinja sintakse-->
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- fontawesome , bootstrap i css -->
+    <link rel="stylesheet" href="/static/fontawesome/css/all.min.css">
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+    <link rel="stylesheet" href="/static/style.css">
+
+    <title>Evidencija studenata</title>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+
+        <a class="navbar-brand" href="#">Evidencija studenata</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <ul class="navbar-nav col">
+
+                <li class="nav-item">
+                    <!-- jinja sintaksom proveravamo path i dodajemo mu klasu aktivnog linka -->
+                    <a class="nav-link {% if 'student' in request.path %} active {% endif %}"
+                        href="{{ url_for('studenti') }}">Studenti</a>
+
+                </li>
+
+                <li class="nav-item">
+
+                    <a class="nav-link {% if 'predmeti' in request.path %} active {% endif %}"
+                        href="{{ url_for('predmeti') }}">Predmeti</a>
+
+                </li>
+
+                <li class="nav-item">
+
+                    <a class="nav-link {% if 'korisnici' in request.path %} active {% endif %}"
+                        href="{{ url_for('korisnici') }}">Korisnici</a>
+
+                </li>
+
+            </ul>
+
+            <form class="form-inline">
+                <!-- Mala izmena , u slucaju da se nalazimo na stranici login ne prikazati ikonu za logout dok nismo ulogovani -->
+                <a href="{{ url_for('logout') }}" class="{% if 'login' not in request.path %} btn btn-primary {% endif %}">
+
+                    <i class="{% if 'login' not in request.path %} fas fa-sign-out-alt {% endif %}"></i>
+
+                </a>
+
+            </form>
+
+        </div>
+
+    </nav>
+
+    {% block content %} {% endblock %}
+    <!-- javascript i jquery -->
+    <script src="/static/jquery.js"></script>
+    <script src="/static/fontawesome/js/all.min.js"></script>
+    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+
+</html

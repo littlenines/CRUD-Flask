@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container" style="max-width: 600px;">
+    <div class="row">
+
+        <form action="{{url_for('korisnik_izmena',id=korisnik.id)}}" method="POST">
+            <h3>Izmena korisnika</h3>
+            <div class="form-group">
+                <label for="exampleInputName">Ime</label>
+                <input type="text" name="ime" class="form-control" id="exampleInputName" required
+                    value="{{korisnik.ime}}">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputLastName">Prezime</label>
+                <input type="text" name="prezime" class="form-control" id="exampleInputLastName" required
+                    value="{{korisnik.prezime}}">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail">Email adresa</label>
+                <input type="email" name="email" class="form-control" id="exampleInputEmail" required
+                    value="{{korisnik.email}}">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword">Lozinka</label>
+                <input type="password" name="lozinka" class="form-control" id="exampleInputPassword" required
+                    value="{{korisnik.lozinka}}">
+            </div>
+            <div class="form-group">
+                <label for="rola">Rola</label>
+                <select class="form-control" name="rola">
+                    <option>Odaberi rolu</option>
+                    <option>Administrator</option>
+                    <option>Profesor</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary mt-2">Sacuvaj</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

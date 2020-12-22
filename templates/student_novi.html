@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container" style="max-width: 600px;">
+    <div class="row">
+
+        <form action="{{url_for('student_novi')}}" method="POST">
+            <h3>Novi student</h3>
+            <div class="form-group">
+                <label for="exampleInputIndeks">Broj indeksa</label>
+                <input type="text" name="indeks" class="form-control" id="exampleInputIndeks" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputIme">Ime</label>
+                <input type="text" name="ime" class="form-control" id="exampleInputIme" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputRod">Ime roditelja</label>
+                <input type="text" name="roditelj" class="form-control" id="exampleInputRod" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPreizme">Prezime</label>
+                <input type="text" name="prezime" class="form-control" id="exampleInputPrezime" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputMail">Email</label>
+                <input type="text" name="mail" class="form-control" id="exampleInputMail" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputBr">Broj telefona</label>
+                <input type="text" name="tel" class="form-control" id="exampleInputBr" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputG">Godina studija</label>
+                <input type="text" name="godina" class="form-control" id="exampleInputG" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputD">Datum rodjenja</label>
+                <input type="date" name="datum" class="form-control" id="exampleInputD" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputJmbg">JMBG</label>
+                <input type="text" name="jmbg" class="form-control" id="exampleInputJmbg" required>
+            </div>
+            <button type="submit" class="btn btn-primary mt-2">Sacuvaj</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

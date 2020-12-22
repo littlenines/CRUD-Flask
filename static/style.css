@@ -1,0 +1,15 @@
+.form-control{
+    appearance: auto;
+    -webkit-appearance: auto;
+}
+.mr-auto{
+    margin-right: auto;
+}
+
+.col a{
+    text-decoration: none;
+}
+a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
+}
